@@ -8,6 +8,11 @@
 4. Execute in small slices.
 5. Review before merge.
 
+Install assumptions for this repo:
+- mode: `{{repoMode}}`
+- detected stack: `{{detectedStack}}`
+- install behavior: `{{installMode}}`
+
 ## Decision Rules
 
 - product intent beats implementation convenience

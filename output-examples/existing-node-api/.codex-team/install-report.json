@@ -1,0 +1,46 @@
+{
+  "targetPath": "/example/existing-node-api",
+  "projectName": "existing-node-api",
+  "repoMode": "brownfield",
+  "detectedStack": "node-api",
+  "detectedSignals": [
+    "package-json",
+    "api-dep",
+    "node-entry"
+  ],
+  "suggestedBlueprint": "internal-tools",
+  "selectedBlueprint": "internal-tools",
+  "installMode": "safe",
+  "recommendedInstallMode": "smart",
+  "packageManager": "npm",
+  "createdFiles": [
+    "agents/backend-architect.md",
+    "docs/ai-team/handoff-rules.md",
+    "prompts/ai-team/support-issue-analysis.md",
+    "workflows/ai-team/bugfix-flow.md"
+  ],
+  "updatedFiles": [],
+  "skippedFiles": [],
+  "conflictsAvoided": 0,
+  "manualReviewFiles": [],
+  "deletedFiles": [],
+  "toolOwnedFiles": [
+    {
+      "path": "agents/backend-architect.md",
+      "sourceTemplate": "templates/agents/backend-architect.md",
+      "checksum": "example"
+    },
+    {
+      "path": ".codex-team/manifest.json",
+      "sourceTemplate": null,
+      "checksum": null
+    },
+    {
+      "path": ".codex-team/install-report.json",
+      "sourceTemplate": null,
+      "checksum": null
+    }
+  ],
+  "generatedAt": "2026-03-18T00:00:00.000Z",
+  "manifestPath": ".codex-team/manifest.json"
+}

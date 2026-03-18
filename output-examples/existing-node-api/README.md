@@ -1,6 +1,6 @@
 # Existing Node API Example
 
-This example shows a brownfield install into a Node API repository. The suggested blueprint is `internal-tools`, emphasizing safety, support handoffs, release readiness, and backend ownership.
+This example shows a brownfield install into a Node API repository. The suggested blueprint is `internal-tools`, and the example uses `safe` mode to emphasize first-install caution in an existing backend codebase.
 
 Notable differences from the Next.js example:
 

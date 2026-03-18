@@ -38,10 +38,13 @@ async function detectProject(targetDir = process.cwd()) {
   const isEmpty = visibleEntries.length === 0;
   const stack = classifyStack({ isEmpty, signals });
   const blueprint = suggestBlueprint({ isEmpty, stack, signals });
+  const projectName = detectProjectName(resolvedDir, packageJson);
 
   return {
     targetDir: resolvedDir,
+    projectName,
     isEmpty,
+    repoMode: isEmpty ? "greenfield" : "brownfield",
     stack,
     blueprint,
     signals,
@@ -147,9 +150,19 @@ function detectPackageManager(names) {
   return "unknown";
 }
 
+function detectProjectName(targetDir, packageJson) {
+  if (packageJson && typeof packageJson.name === "string" && packageJson.name.trim()) {
+    return packageJson.name.trim();
+  }
+
+  return path.basename(targetDir);
+}
+
 function formatResult(result) {
   return [
     `targetDir: ${result.targetDir}`,
+    `projectName: ${result.projectName}`,
+    `repoMode: ${result.repoMode}`,
     `empty: ${result.isEmpty}`,
     `stack: ${result.stack}`,
     `blueprint: ${result.blueprint}`,
@@ -159,11 +172,27 @@ function formatResult(result) {
 }
 
 async function main() {
-  const args = process.argv.slice(2);
-  const targetDir = args.find((arg) => !arg.startsWith("--")) || process.cwd();
-  const json = args.includes("--json");
+  const args = parseArgs(process.argv.slice(2));
+  const targetDir = args._[0] || process.cwd();
+  const json = args.json;
   const result = await detectProject(targetDir);
   console.log(json ? JSON.stringify(result, null, 2) : formatResult(result));
+}
+
+function parseArgs(argv) {
+  const parsed = { _: [] };
+
+  for (const arg of argv) {
+    if (arg === "--json") {
+      parsed.json = true;
+      continue;
+    }
+
+    if (arg.startsWith("--")) continue;
+    parsed._.push(arg);
+  }
+
+  return parsed;
 }
 
 if (require.main === module) {

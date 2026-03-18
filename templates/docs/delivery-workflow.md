@@ -4,6 +4,8 @@
 
 Use this for new features, meaningful enhancements, or multi-step product work.
 
+Current emphasis for `{{projectName}}`: `{{workflowEmphasis}}`.
+
 ## Steps
 
 1. Define the request and success criteria.

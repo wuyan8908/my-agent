@@ -2,35 +2,46 @@
 
 ## Customize First
 
-- blueprint selection
-- default agent roster by blueprint
-- repo-specific business vocabulary
-- custom prompts for repeated work
+- blueprint manifests
+- included agents and workflow assets
+- business priorities and context notes
+- prompt wording for recurring repo work
 
-## Avoid Customizing Early
+## Template Variables
 
-- shared file naming
-- install paths
-- handoff format
-- the core structure of agent templates
+Templates support a small fixed render context:
 
-## Extension Model
+- `projectName`
+- `blueprintName`
+- `detectedStack`
+- `repoMode`
+- `packageManager`
+- `workflowEmphasis`
+- `businessFocus`
+- `generatedAt`
+- `installMode`
 
-The intended extension path is small:
+Use variables when they improve trust or repo-specific usefulness. Avoid threading them through every section or changing stable headings.
 
-1. adjust blueprint manifests
-2. add or remove templates
+## Safe Extension Path
+
+1. edit blueprint manifests
+2. edit or add templates
 3. rerun bootstrap
 
-That keeps generated output consistent while still allowing project-specific changes.
+That path keeps the generated layer compact and predictable.
 
-## Naming Rules
+## Avoid Early Drift
 
-- use `blueprint` for repo-type presets
-- keep agent filenames in kebab-case
-- keep generated docs under `docs/ai-team`
-- keep shared workflow names stable across blueprints
+- do not rename the generated roots
+- do not add a second ownership mechanism
+- do not vary section order between similar templates
+- do not over-template every sentence
 
-## Safe Edits
+## What Is Safe To Change
 
-You can safely edit product wording, business concerns, included files, and blueprint instructions without changing the installation contract.
+- blueprint aliases and recommended modes
+- business priorities
+- workflow emphasis
+- custom prompts and docs
+- optional agent coverage

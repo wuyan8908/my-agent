@@ -6,6 +6,8 @@ Describe the bug with observed behavior, expected behavior, and repro steps.
 
 ## Inputs
 
+- detected stack: `{{detectedStack}}`
+- package manager: `{{packageManager}}`
 - repro steps
 - logs or error message
 - affected area

@@ -4,6 +4,8 @@
 
 Use before shipping meaningful changes.
 
+Install note: this team layer was installed in `{{installMode}}` mode for a `{{repoMode}}` repo.
+
 ## Primary Agents
 
 - `devops-automator`

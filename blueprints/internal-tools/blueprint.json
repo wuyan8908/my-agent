@@ -2,6 +2,10 @@
   "id": "internal-tools",
   "name": "Internal Tools",
   "description": "Agent team for operational systems, admin workflows, and internal product delivery.",
+  "aliases": [
+    "operations-team"
+  ],
+  "recommendedInstallMode": "smart",
   "defaultAgents": [
     "project-shepherd",
     "product-manager",
@@ -35,6 +39,10 @@
     "Optimize for reliability, permissions, and auditability.",
     "Assume operational clarity matters more than marketing polish.",
     "Keep admin workflows low-friction and safe."
+  ],
+  "contextNotes": [
+    "Use for admin portals, ops tooling, or service repos where correctness matters more than broad growth content.",
+    "Smart mode preserves existing tool-owned files while avoiding churn in adjacent operational code."
   ],
   "businessConcerns": [
     "correctness",

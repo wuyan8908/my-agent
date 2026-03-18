@@ -1,14 +1,17 @@
 {
   "name": "codex-team-bootstrapper",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Codex-first bootstrapper for installing a practical AI team into new or existing repositories.",
   "license": "MIT",
   "type": "commonjs",
   "scripts": {
     "detect": "node scripts/detect-project.js",
+    "detect:json": "node scripts/detect-project.js --json",
     "bootstrap": "node scripts/bootstrap.js",
-    "merge": "node scripts/merge-into-repo.js",
-    "bootstrap:dry": "node scripts/bootstrap.js --dry-run"
+    "bootstrap:dry": "node scripts/bootstrap.js --dry-run",
+    "bootstrap:smart": "node scripts/bootstrap.js --mode smart",
+    "bootstrap:replace": "node scripts/bootstrap.js --mode replace",
+    "merge": "node scripts/merge-into-repo.js"
   }
 }

@@ -2,7 +2,7 @@
 
 ## What This Is
 
-Codex Team Bootstrapper is a Codex-first installer for a practical AI team. It generates a file-based operating layer inside a target repository so teams can route work through clear roles, prompts, docs, and workflows instead of ad hoc prompting.
+Codex Team Bootstrapper is a Codex-first installer for a practical AI team. It generates a file-based operating layer inside a target repository so teams can route work through clear roles, prompts, docs, workflows, and tracked install metadata instead of ad hoc prompting.
 
 ## Who It Is For
 
@@ -16,7 +16,7 @@ Copying prompt files by hand is inconsistent, hard to maintain, and usually disc
 
 ## Product Position
 
-This project is a generator and bootstrap system, not an app repo and not a direct clone of an agent library. Its job is to install a compact, opinionated team package that works well with Codex on first use.
+This project is a generator and bootstrap system, not an app repo and not a direct clone of an agent library. Its job is to install a compact, opinionated, and auditable team package that works well with Codex on first use.
 
 ## Success Criteria
 

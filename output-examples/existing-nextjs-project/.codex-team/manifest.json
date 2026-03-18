@@ -1,7 +1,25 @@
 {
   "generatedBy": "codex-team-bootstrapper",
-  "blueprint": "saas",
-  "stack": "nextjs",
+  "version": "0.2.0",
+  "projectName": "existing-nextjs-project",
+  "repoMode": "brownfield",
+  "detectedStack": "nextjs",
+  "suggestedBlueprint": "saas",
+  "selectedBlueprint": "saas",
+  "installMode": "smart",
+  "recommendedInstallMode": "smart",
+  "generatedAt": "2026-03-18T00:00:00.000Z",
+  "templateVariables": {
+    "projectName": "existing-nextjs-project",
+    "blueprintName": "saas",
+    "detectedStack": "nextjs",
+    "repoMode": "brownfield",
+    "packageManager": "pnpm",
+    "workflowEmphasis": "feature delivery, bugfixes, release readiness, feedback synthesis",
+    "businessFocus": "activation, retention, permissions, uptime, observability, support quality",
+    "generatedAt": "2026-03-18T00:00:00.000Z",
+    "installMode": "smart"
+  },
   "defaultAgents": [
     "project-shepherd",
     "product-manager",
@@ -14,5 +32,22 @@
     "feedback-synthesizer",
     "analytics-reporter",
     "content-creator"
+  ],
+  "toolOwnedFiles": [
+    {
+      "path": "agents/frontend-developer.md",
+      "sourceTemplate": "templates/agents/frontend-developer.md",
+      "checksum": "example"
+    },
+    {
+      "path": ".codex-team/manifest.json",
+      "sourceTemplate": null,
+      "checksum": null
+    },
+    {
+      "path": ".codex-team/install-report.json",
+      "sourceTemplate": null,
+      "checksum": null
+    }
   ]
 }

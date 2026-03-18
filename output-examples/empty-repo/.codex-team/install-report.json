@@ -1,0 +1,56 @@
+{
+  "targetPath": "/example/empty-repo",
+  "projectName": "empty-repo",
+  "repoMode": "greenfield",
+  "detectedStack": "empty",
+  "detectedSignals": [],
+  "suggestedBlueprint": "core",
+  "selectedBlueprint": "core",
+  "installMode": "safe",
+  "recommendedInstallMode": "safe",
+  "packageManager": "unknown",
+  "createdFiles": [
+    "agents/project-shepherd.md",
+    "agents/product-manager.md",
+    "agents/software-architect.md",
+    "agents/frontend-developer.md",
+    "agents/backend-architect.md",
+    "agents/devops-automator.md",
+    "agents/code-reviewer.md",
+    "docs/ai-team/team-overview.md",
+    "docs/ai-team/operating-model.md",
+    "docs/ai-team/delivery-workflow.md",
+    "docs/ai-team/handoff-rules.md",
+    "docs/ai-team/definition-of-done.md",
+    "prompts/ai-team/new-feature-request.md",
+    "prompts/ai-team/bugfix-request.md",
+    "prompts/ai-team/weekly-feedback-synthesis.md",
+    "workflows/ai-team/feature-delivery.md",
+    "workflows/ai-team/bugfix-flow.md",
+    "workflows/ai-team/release-readiness.md"
+  ],
+  "updatedFiles": [],
+  "skippedFiles": [],
+  "conflictsAvoided": 0,
+  "manualReviewFiles": [],
+  "deletedFiles": [],
+  "toolOwnedFiles": [
+    {
+      "path": "agents/project-shepherd.md",
+      "sourceTemplate": "templates/agents/project-shepherd.md",
+      "checksum": "example"
+    },
+    {
+      "path": ".codex-team/manifest.json",
+      "sourceTemplate": null,
+      "checksum": null
+    },
+    {
+      "path": ".codex-team/install-report.json",
+      "sourceTemplate": null,
+      "checksum": null
+    }
+  ],
+  "generatedAt": "2026-03-18T00:00:00.000Z",
+  "manifestPath": ".codex-team/manifest.json"
+}

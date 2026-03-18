@@ -1,6 +1,6 @@
 # Existing Next.js Project Example
 
-This example shows a brownfield install into a customer-facing Next.js application. The suggested blueprint is `saas`, which keeps strong product and frontend coverage while still installing shared operating docs and review workflows.
+This example shows a brownfield install into a customer-facing Next.js application. The suggested blueprint is `saas`, and the example uses `smart` mode to show an additive install that can still update tracked generated files later.
 
 Notable differences from an empty repo install:
 

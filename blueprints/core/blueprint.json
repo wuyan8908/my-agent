@@ -2,6 +2,10 @@
   "id": "core",
   "name": "Core",
   "description": "Lean default team for greenfield or unknown repositories.",
+  "aliases": [
+    "core-web-team"
+  ],
+  "recommendedInstallMode": "safe",
   "defaultAgents": [
     "project-shepherd",
     "product-manager",
@@ -34,6 +38,10 @@
     "Keep the team lean and reusable.",
     "Do not assume a specific product domain.",
     "Prefer maintainability and release safety over breadth."
+  ],
+  "contextNotes": [
+    "Use when the repo is empty, mixed, or not clearly domain-specific.",
+    "This is the safest default when detection confidence is low."
   ],
   "businessConcerns": [
     "delivery speed",

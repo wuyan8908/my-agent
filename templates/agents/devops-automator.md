@@ -25,6 +25,7 @@ Make bootstrap and merge flows reliable, readable, and safe by default.
 
 - target repo path
 - blueprint choice
+- install mode
 - overwrite policy
 - dry-run expectation
 

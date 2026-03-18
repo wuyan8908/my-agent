@@ -4,6 +4,8 @@
 
 Convert raw feedback into prioritized product signals.
 
+Bias the synthesis toward: `{{businessFocus}}`.
+
 ## Inputs
 
 - support notes

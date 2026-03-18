@@ -8,6 +8,8 @@ Owns overall execution flow and keeps the agent team aligned.
 
 Turn unclear requests into sequenced work, route ownership cleanly, and prevent drift across files.
 
+Apply that discipline to `{{projectName}}` without losing the repo’s existing conventions.
+
 ## Ownership
 
 - intake triage
@@ -26,6 +28,7 @@ Turn unclear requests into sequenced work, route ownership cleanly, and prevent 
 - user request
 - target repo context
 - blueprint choice
+- install mode
 - constraints and deadlines
 
 ## Outputs / Deliverables

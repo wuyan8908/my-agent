@@ -1,181 +1,237 @@
 # Codex Team Bootstrapper
 
-Codex Team Bootstrapper is a Codex-first installer for a practical AI team operating layer. It generates a compact set of agents, team docs, prompts, workflows, and blueprint guidance that can be dropped into an empty repository or merged safely into an existing one.
+Codex Team Bootstrapper is a Codex-first bootstrap tool for installing a practical AI team layer into a new or existing repository. It generates a compact operating surface of agents, team docs, prompts, workflows, and install metadata so Codex can work with clearer ownership, safer handoffs, and more predictable repo upgrades.
 
-It is designed for software teams shipping ecommerce products, SaaS products, admin portals, B2B ordering systems, and other modern web products. Instead of copying prompt files by hand, you install a reusable team package with clear ownership, handoffs, and workflow defaults.
+This repository is not an app, not a plugin framework, and not a giant prompt catalog. It is a lightweight installer that turns reusable templates and blueprint policies into repo-specific generated files.
 
-## Concept
+## Quick Start
 
-This repository is a generator, not an application and not a prompt dump. The source of truth lives here in:
+Detect a repo:
 
-- `templates/` for reusable agent, doc, prompt, and workflow templates
-- `blueprints/` for domain-specific installation choices
-- `scripts/` for detection, generation, and safe merge behavior
-- `output-examples/` for sample generated installs
-- `docs/` for product and architecture guidance
+```bash
+npm run detect -- /path/to/repo
+```
 
-The generated output is intentionally small:
+Preview a greenfield install:
+
+```bash
+npm run bootstrap -- /path/to/empty-repo --dry-run
+```
+
+Install into an existing Next.js repo with explicit mode:
+
+```bash
+npm run bootstrap -- /path/to/existing-nextjs-repo --blueprint saas --mode smart
+```
+
+Install into an existing Node API repo conservatively:
+
+```bash
+npm run bootstrap -- /path/to/existing-node-api --mode safe
+```
+
+## What Gets Generated
+
+The generated layer stays intentionally small:
 
 - `agents/`
 - `docs/ai-team/`
 - `prompts/ai-team/`
 - `workflows/ai-team/`
 - `.codex-team/manifest.json`
+- `.codex-team/install-report.json`
 
-## Why This Exists
+The first four paths are the working surface for humans and Codex. The `.codex-team/` files are the trust layer used for ownership tracking, future upgrades, and install reporting.
 
-Most agent repos stop at “here are some prompt files.” Real teams need more than that:
+## Install Modes
 
-- a compact roster with defined ownership
-- shared operating docs
-- repeatable prompt inputs
-- standard handoff rules
-- safe installation into brownfield repos
+`safe` is the default.
 
-This repository turns those needs into a file-based operating layer that Codex can read, install, extend, and keep consistent.
+- `safe`: create missing generated files only. Existing files are never overwritten.
+- `smart`: create missing files and update files that are already proven tool-owned.
+- `replace`: regenerate the tracked team layer, including stale tool-owned files from earlier installs, while still leaving unrelated user files alone.
 
-## Why Not Just Fork agency-agents?
+The tool does not attempt semantic merges. If ownership is unclear, it skips the file and records it for manual review.
 
-The reference repo was useful design inspiration because it shows the value of specialized, deliverable-focused agents with practical tone and clear role boundaries. This project intentionally differs in a few ways:
+## How Detection Works
 
-- It is a bootstrapper, not a large agent catalog.
-- It optimizes for installation into arbitrary repositories, not direct consumption as a role library.
-- It is Codex-first and built around repo-aware workflows, handoffs, and merge safety.
-- It uses blueprints to keep the generated team small and relevant.
+`scripts/detect-project.js` looks for practical signals, not heavy inference:
 
-The goal is to keep the strengths of specialization and practical tone without copying the reference structure or shipping a massive roster by default.
+- empty repo -> `core`
+- Next.js signals such as `next`, `next.config.*`, `app/`, `pages/` -> usually `saas`
+- Node API signals such as `express`, `fastify`, `routes/`, `server.*` -> usually `internal-tools`
+- commerce signals such as Stripe or Shopify dependencies -> `ecommerce`
+- uncertain repo -> fallback to `core`
 
-## Use Cases
+Detection returns project name, repo mode (`greenfield` or `brownfield`), stack guess, blueprint suggestion, signals, and package manager.
 
-- Install a default AI team into a new product repo.
-- Add a lightweight AI operating layer to an existing Next.js app.
-- Add structured support, review, and release workflows to an existing Node API.
-- Standardize how product, engineering, support, sales, and growth hand work to each other.
+## How Merge Safety Works
 
-## Folder Structure
+This tool distinguishes between missing files, tool-owned files, and files with unclear ownership.
 
-```text
-blueprints/
-  core/
-  ecommerce/
-  saas/
-  internal-tools/
-templates/
-  agents/
-  docs/
-  prompts/
-  workflows/
-scripts/
-  bootstrap.js
-  detect-project.js
-  merge-into-repo.js
-output-examples/
-  empty-repo/
-  existing-nextjs-project/
-  existing-node-api/
-docs/
-  product-vision.md
-  architecture.md
-  usage-with-codex.md
-  customization.md
-  roadmap.md
-```
+A file is considered tool-owned when at least one of these is true:
 
-## How Bootstrap Works
+- it appears in `.codex-team/manifest.json`
+- it appears in `.codex-team/install-report.json`
+- it is a generated markdown file with the bootstrapper header comment
 
-1. `detect-project.js` inspects the target repo and classifies it as `empty`, `nextjs`, `node-api`, or `unknown`.
-2. The detector suggests a blueprint such as `core`, `saas`, `internal-tools`, or `ecommerce`.
-3. `bootstrap.js` loads the chosen blueprint, selects the right templates, and builds a file plan.
-4. `merge-into-repo.js` writes the generated files with explicit overwrite behavior and clear logging.
+Behavior by mode:
 
-The scripts use blueprint manifests and template files directly. There is no hidden runtime or separate orchestration engine.
+- `safe` skips all existing generated-path files, even if tool-owned
+- `smart` updates only proven tool-owned files
+- `replace` updates tool-owned files and can remove stale tool-owned files from older installs
+- any untracked file already occupying a generated path is treated conservatively and left for manual review
+
+This keeps brownfield installs predictable and prevents the tool from claiming ownership of arbitrary repo files.
+
+## Generated Files And Reports
+
+`.codex-team/manifest.json` is the durable ownership record. It stores:
+
+- selected blueprint
+- install mode
+- render variables
+- blueprint priorities
+- tracked tool-owned files
+
+`.codex-team/install-report.json` is the latest install outcome. It records:
+
+- target path
+- detected stack and signals
+- suggested blueprint
+- selected blueprint
+- install mode
+- created, updated, skipped, deleted, and manual-review files
+- timestamp and manifest path
+
+Use the install report when you want to see exactly what the last install attempted.
+
+## Template Variables
+
+Templates are rendered with a small fixed placeholder system using `{{variableName}}`. There are no loops, conditionals, or filters in phase 2.
+
+Supported variables:
+
+- `projectName`
+- `blueprintName`
+- `detectedStack`
+- `repoMode`
+- `packageManager`
+- `workflowEmphasis`
+- `businessFocus`
+- `generatedAt`
+- `installMode`
+
+These variables are used selectively in docs, prompts, workflows, manifest metadata, and a few agent instructions where repo context materially improves usefulness.
+
+## Blueprint Policies
+
+Blueprints do more than list files. Each one now defines:
+
+- default agents
+- included docs, prompts, and workflows
+- business priorities
+- workflow emphasis
+- recommended install mode
+- aliases and context notes
+
+Examples:
+
+- `core` and alias `core-web-team`
+- `ecommerce` and alias `commerce-team`
+- `saas` and alias `saas-team`
+- `internal-tools` and alias `operations-team`
+
+## New Repo vs Existing Repo
+
+For a new repo:
+
+- detection returns `greenfield`
+- `core` is usually selected
+- the tool installs the full baseline operating layer
+- the next step is usually `project-shepherd` plus `new-feature-request.md`
+
+For an existing repo:
+
+- detection returns `brownfield`
+- blueprint choice follows stack and domain signals
+- `safe` is the default so existing files are not overwritten
+- `smart` becomes useful once the generated layer is already tracked
 
 ## Example Commands
 
 ```bash
 npm run detect -- /path/to/repo
-npm run bootstrap -- /path/to/repo
-npm run bootstrap -- /path/to/repo --blueprint ecommerce
+npm run detect:json -- /path/to/repo
 npm run bootstrap -- /path/to/repo --dry-run
-npm run bootstrap -- /path/to/repo --overwrite replace
+npm run bootstrap -- /path/to/repo --blueprint commerce-team --mode smart
+npm run bootstrap -- /path/to/repo --blueprint internal-tools --mode replace
+npm run merge -- /path/to/repo --plan ./file-plan.json --mode safe
 ```
-
-## How This Works In A New Repo
-
-For an empty repository, the bootstrapper installs the full core team package and baseline operating docs. The result is a ready-to-use working layer for defining features, routing work, reviewing changes, and preparing releases.
-
-Recommended flow after installation:
-
-1. Start with `agents/project-shepherd.md`.
-2. Use `prompts/ai-team/new-feature-request.md` to define the first task.
-3. Follow `workflows/ai-team/feature-delivery.md`.
-
-## How This Works In An Existing Repo
-
-For a brownfield repository, detection looks for obvious stack and domain signals before suggesting a blueprint. The bootstrapper then installs only the selected team assets and avoids destructive overwrites by default.
-
-Examples:
-
-- existing Next.js app -> usually `saas`
-- existing Node API -> usually `internal-tools`
-- commerce signals such as Stripe or Shopify -> often `ecommerce`
-- uncertain repo -> fallback to `core`
 
 ## How To Use After Installation
 
-Treat the generated assets as your default team operating layer:
+Treat the generated files as the team operating layer for Codex:
 
-- `project-shepherd` routes and sequences work
-- `product-manager` clarifies the request
-- `software-architect` or `backend-architect` sets boundaries
-- `frontend-developer` or `backend-architect` implements
-- `code-reviewer` checks correctness and drift
-- `devops-automator` handles release and delivery concerns
+1. start with `agents/project-shepherd.md`
+2. clarify work with `product-manager`
+3. use the relevant prompt in `prompts/ai-team/`
+4. follow the matching workflow in `workflows/ai-team/`
+5. finish with `code-reviewer`
 
-The docs define shared rules. The prompts standardize task intake. The workflows make handoffs concrete instead of implicit.
-
-## Usage With Codex
-
-Use Codex as the working surface for the installed team package:
-
-- ask Codex to detect the repo and confirm the blueprint
-- route work through the generated prompts and workflows
-- reference specific agent files when you want clearer ownership
-- use the release and feedback workflows before closing work
-
-Example:
+Recommended Codex pattern:
 
 ```text
-Use Project Shepherd with the SaaS blueprint to route this feature request.
-Preserve existing repo conventions, use the generated handoff rules,
-and finish with a Code Reviewer pass before finalizing.
+Use Project Shepherd for this repo. Follow the installed handoff rules,
+respect the existing codebase conventions, route design through the right
+specialist agent, and finish with a Code Reviewer pass.
 ```
 
-## Recommended Workflow
+## How To Customize
 
-1. Intake through `project-shepherd`.
-2. Clarify through `product-manager`.
-3. Design through `software-architect` or `backend-architect`.
-4. Implement through the owning engineering agent.
-5. Validate through `code-reviewer`.
-6. Use `release-readiness.md` before shipping meaningful changes.
-7. Feed support and sales signals back through the feedback workflows.
+The safe extension path is:
 
-## Reference Influence
+1. adjust blueprint manifests
+2. edit or add templates
+3. rerun bootstrap
 
-The reference repository influenced this project in three narrow ways:
+Avoid renaming the generated roots or changing the ownership model unless you also update the scripts and documentation that depend on them.
 
-- specialized agent roles with clear ownership
-- practical, execution-oriented tone
-- deliverable-focused templates instead of vague personas
+## Output Examples
 
-This project intentionally improves on that model by keeping the default install smaller, making the output repo-aware, and centering the workflow around Codex and repeatable installation.
+The repository includes validation-oriented examples under [output-examples](/Users/zhanleili/Desktop/work/my-agent/output-examples):
+
+- [empty-repo](/Users/zhanleili/Desktop/work/my-agent/output-examples/empty-repo)
+- [existing-nextjs-project](/Users/zhanleili/Desktop/work/my-agent/output-examples/existing-nextjs-project)
+- [existing-node-api](/Users/zhanleili/Desktop/work/my-agent/output-examples/existing-node-api)
+
+Each example includes before/after notes plus install metadata so you can see why a blueprint was chosen and what changed.
+
+## Why Not Just Fork agency-agents?
+
+The reference repo [agency-agents](https://github.com/msitarzewski/agency-agents) influenced this project in tone and role clarity, but the product is deliberately different:
+
+- this repo installs a team layer into arbitrary repos
+- it is optimized for repo-aware generation, not direct catalog consumption
+- it focuses on trust, merge safety, and install reporting
+- it keeps the default footprint small instead of shipping a massive roster
+
+## Repository Structure
+
+```text
+blueprints/
+templates/
+scripts/
+docs/
+output-examples/
+README.md
+package.json
+```
 
 ## Roadmap
 
-- Improve project detection and blueprint suggestions.
-- Add upgrade guidance for teams that outgrow the default roster.
-- Add additional domain blueprints only when real usage justifies them.
-- Tighten brownfield merge behavior from real installs.
+- tighten brownfield safety from real-world installs
+- improve detection signals and blueprint confidence
+- expand upgrade guidance without growing the default footprint too much
 
-See [docs/roadmap.md](/Users/zhanleili/Desktop/work/my-agent/docs/roadmap.md) for more detail.
+See [docs/architecture.md](/Users/zhanleili/Desktop/work/my-agent/docs/architecture.md) and [docs/customization.md](/Users/zhanleili/Desktop/work/my-agent/docs/customization.md) for the operational details behind the install flow.

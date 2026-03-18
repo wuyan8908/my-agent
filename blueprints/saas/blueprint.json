@@ -2,6 +2,10 @@
   "id": "saas",
   "name": "SaaS",
   "description": "Balanced team for product-led SaaS delivery and ongoing product iteration.",
+  "aliases": [
+    "saas-team"
+  ],
+  "recommendedInstallMode": "smart",
   "defaultAgents": [
     "project-shepherd",
     "product-manager",
@@ -41,6 +45,10 @@
     "Optimize for onboarding, permissions, stability, and retention.",
     "Keep product feedback loops tight.",
     "Bias toward incremental delivery in the existing stack."
+  ],
+  "contextNotes": [
+    "Use for customer-facing software products with frequent iteration and existing UI conventions.",
+    "Smart mode works well once the generated layer is already tracked in the repo."
   ],
   "businessConcerns": [
     "activation",

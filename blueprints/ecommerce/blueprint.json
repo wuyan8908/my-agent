@@ -2,6 +2,10 @@
   "id": "ecommerce",
   "name": "Ecommerce",
   "description": "Practical team for storefront, checkout, order, and support-heavy product work.",
+  "aliases": [
+    "commerce-team"
+  ],
+  "recommendedInstallMode": "smart",
   "defaultAgents": [
     "project-shepherd",
     "product-manager",
@@ -47,6 +51,10 @@
     "Treat checkout, payment, order, inventory, and support flows as first-class.",
     "Optimize for conversion and operational clarity.",
     "Prefer practical implementation paths over abstract debate."
+  ],
+  "contextNotes": [
+    "Use when commerce signals are present or the repo centers on orders, payments, or catalog workflows.",
+    "Smart mode is usually the best default after the first install because storefront repos tend to evolve quickly."
   ],
   "businessConcerns": [
     "conversion",

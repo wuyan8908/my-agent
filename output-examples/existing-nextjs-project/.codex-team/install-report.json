@@ -1,0 +1,47 @@
+{
+  "targetPath": "/example/existing-nextjs-project",
+  "projectName": "existing-nextjs-project",
+  "repoMode": "brownfield",
+  "detectedStack": "nextjs",
+  "detectedSignals": [
+    "package-json",
+    "next-dep",
+    "next-config",
+    "next-routes"
+  ],
+  "suggestedBlueprint": "saas",
+  "selectedBlueprint": "saas",
+  "installMode": "smart",
+  "recommendedInstallMode": "smart",
+  "packageManager": "pnpm",
+  "createdFiles": [
+    "agents/frontend-developer.md",
+    "docs/ai-team/operating-model.md",
+    "prompts/ai-team/seo-optimization-request.md",
+    "workflows/ai-team/release-readiness.md"
+  ],
+  "updatedFiles": [],
+  "skippedFiles": [],
+  "conflictsAvoided": 0,
+  "manualReviewFiles": [],
+  "deletedFiles": [],
+  "toolOwnedFiles": [
+    {
+      "path": "agents/frontend-developer.md",
+      "sourceTemplate": "templates/agents/frontend-developer.md",
+      "checksum": "example"
+    },
+    {
+      "path": ".codex-team/manifest.json",
+      "sourceTemplate": null,
+      "checksum": null
+    },
+    {
+      "path": ".codex-team/install-report.json",
+      "sourceTemplate": null,
+      "checksum": null
+    }
+  ],
+  "generatedAt": "2026-03-18T00:00:00.000Z",
+  "manifestPath": ".codex-team/manifest.json"
+}

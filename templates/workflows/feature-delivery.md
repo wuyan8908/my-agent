@@ -4,6 +4,8 @@
 
 Use when a feature request needs design, implementation, and review.
 
+Current blueprint emphasis: `{{workflowEmphasis}}`.
+
 ## Primary Agents
 
 - `product-manager`

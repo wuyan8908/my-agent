@@ -4,6 +4,10 @@
 
 We are working in a real repository with existing conventions.
 
+Repository: `{{projectName}}`
+Detected stack: `{{detectedStack}}`
+Repo mode: `{{repoMode}}`
+
 ## Request
 
 Add: `<feature>`

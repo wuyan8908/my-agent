@@ -1,7 +1,25 @@
 {
   "generatedBy": "codex-team-bootstrapper",
-  "blueprint": "core",
-  "stack": "empty",
+  "version": "0.2.0",
+  "projectName": "empty-repo",
+  "repoMode": "greenfield",
+  "detectedStack": "empty",
+  "suggestedBlueprint": "core",
+  "selectedBlueprint": "core",
+  "installMode": "safe",
+  "recommendedInstallMode": "safe",
+  "generatedAt": "2026-03-18T00:00:00.000Z",
+  "templateVariables": {
+    "projectName": "empty-repo",
+    "blueprintName": "core",
+    "detectedStack": "empty",
+    "repoMode": "greenfield",
+    "packageManager": "unknown",
+    "workflowEmphasis": "feature delivery, bugfixes, release readiness",
+    "businessFocus": "delivery speed, maintainability, code quality, deploy safety",
+    "generatedAt": "2026-03-18T00:00:00.000Z",
+    "installMode": "safe"
+  },
   "defaultAgents": [
     "project-shepherd",
     "product-manager",
@@ -10,5 +28,22 @@
     "backend-architect",
     "devops-automator",
     "code-reviewer"
+  ],
+  "toolOwnedFiles": [
+    {
+      "path": "agents/project-shepherd.md",
+      "sourceTemplate": "templates/agents/project-shepherd.md",
+      "checksum": "example"
+    },
+    {
+      "path": ".codex-team/manifest.json",
+      "sourceTemplate": null,
+      "checksum": null
+    },
+    {
+      "path": ".codex-team/install-report.json",
+      "sourceTemplate": null,
+      "checksum": null
+    }
   ]
 }

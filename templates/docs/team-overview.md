@@ -4,6 +4,8 @@
 
 Describe the installed AI team in one place so Codex can see who owns what and how work moves.
 
+This team package is installed for `{{projectName}}` using the `{{blueprintName}}` blueprint.
+
 ## Team Map
 
 - `project-shepherd`: coordinates scope, sequencing, and handoffs
@@ -20,3 +22,4 @@ Describe the installed AI team in one place so Codex can see who owns what and h
 - cross-cutting work must name the primary agent and reviewer
 - prefer small shippable changes over broad rewrites
 - if repo context is unclear, the shepherd clarifies first
+- current workflow emphasis: `{{workflowEmphasis}}`
