@@ -2,7 +2,7 @@
 
 - selectedBlueprint: `internal-tools`
 - selectedInstallMode: `safe`
-- createdFiles: `4`
+- createdFiles: `7`
 - updatedFiles: `0`
 - skippedFiles: `0`
 - conflictsAvoided: `0`
@@ -11,4 +11,4 @@
 Notes:
 - Backend, devops, and support-facing workflow assets were installed.
 - No unrelated user-owned files were touched.
-- The next safe step is to use the support and bugfix workflows against a real issue.
+- The next safe step is to open `.codex-team/start.md` and use the support or bugfix workflow against a real issue.

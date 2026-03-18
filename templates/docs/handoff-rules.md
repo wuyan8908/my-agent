@@ -14,3 +14,4 @@
 - never assume the next agent has read previous work
 - keep handoffs short, specific, and actionable
 - if a handoff blocks the next step, say so directly
+- the orchestrator owns the final consolidation step

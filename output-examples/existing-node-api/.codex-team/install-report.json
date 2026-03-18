@@ -17,7 +17,10 @@
     "agents/backend-architect.md",
     "docs/ai-team/handoff-rules.md",
     "prompts/ai-team/support-issue-analysis.md",
-    "workflows/ai-team/bugfix-flow.md"
+    "workflows/ai-team/bugfix-flow.md",
+    ".codex-team/start.md",
+    ".codex-team/orchestrator-prompt.md",
+    ".codex-team/quick-reference.md"
   ],
   "updatedFiles": [],
   "skippedFiles": [],
@@ -28,6 +31,21 @@
     {
       "path": "agents/backend-architect.md",
       "sourceTemplate": "templates/agents/backend-architect.md",
+      "checksum": "example"
+    },
+    {
+      "path": ".codex-team/orchestrator-prompt.md",
+      "sourceTemplate": "templates/meta/orchestrator-prompt.md",
+      "checksum": "example"
+    },
+    {
+      "path": ".codex-team/quick-reference.md",
+      "sourceTemplate": "templates/meta/quick-reference.md",
+      "checksum": "example"
+    },
+    {
+      "path": ".codex-team/start.md",
+      "sourceTemplate": "templates/meta/start.md",
       "checksum": "example"
     },
     {

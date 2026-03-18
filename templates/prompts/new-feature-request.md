@@ -7,6 +7,7 @@ We are working in a real repository with existing conventions.
 Repository: `{{projectName}}`
 Detected stack: `{{detectedStack}}`
 Repo mode: `{{repoMode}}`
+Default orchestrator prompt: `{{orchestratorPromptPath}}`
 
 ## Request
 
@@ -33,3 +34,4 @@ Add: `<feature>`
 - `software-architect` checks boundaries
 - `frontend-developer` or `backend-architect` implements
 - `code-reviewer` verifies the result
+- keep one orchestrator responsible for final consolidation

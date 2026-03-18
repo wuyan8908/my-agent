@@ -12,6 +12,7 @@
     "bootstrap:dry": "node scripts/bootstrap.js --dry-run",
     "bootstrap:smart": "node scripts/bootstrap.js --mode smart",
     "bootstrap:replace": "node scripts/bootstrap.js --mode replace",
+    "codex:start": "node scripts/print-start.js",
     "merge": "node scripts/merge-into-repo.js"
   }
 }

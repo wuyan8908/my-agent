@@ -18,7 +18,8 @@ Install note: this team layer was installed in `{{installMode}}` mode for a `{{r
 2. Check tests, build, and deployment assumptions.
 3. Review release notes and rollback risk.
 4. Verify cross-file naming and doc alignment.
-5. Decide whether to ship or hold.
+5. Consolidate any specialist review notes.
+6. Decide whether to ship or hold.
 
 ## Exit Criteria
 

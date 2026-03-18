@@ -2,7 +2,7 @@
 
 - selectedBlueprint: `core`
 - selectedInstallMode: `safe`
-- createdFiles: `19`
+- createdFiles: `21`
 - updatedFiles: `0`
 - skippedFiles: `0`
 - conflictsAvoided: `0`
@@ -10,5 +10,5 @@
 
 Notes:
 - The baseline team layer was created from scratch.
-- The generated docs, prompts, and workflows are ready for first use.
-- Start with `agents/project-shepherd.md` and the new feature request prompt.
+- The generated docs, prompts, workflows, and `.codex-team/` start layer are ready for first use.
+- Start with `.codex-team/start.md` and paste `.codex-team/orchestrator-prompt.md` into Codex.

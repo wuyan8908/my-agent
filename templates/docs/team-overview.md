@@ -23,3 +23,4 @@ This team package is installed for `{{projectName}}` using the `{{blueprintName}
 - prefer small shippable changes over broad rewrites
 - if repo context is unclear, the shepherd clarifies first
 - current workflow emphasis: `{{workflowEmphasis}}`
+- default orchestrator entry: `{{orchestratorPromptPath}}`

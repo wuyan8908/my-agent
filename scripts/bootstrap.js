@@ -5,10 +5,24 @@ const fs = require("fs/promises");
 const path = require("path");
 const { detectProject } = require("./detect-project");
 const { loadInstallState, mergeIntoRepo } = require("./merge-into-repo");
-const { GENERATED_ROOTS, INSTALL_REPORT_PATH, MANIFEST_PATH, METADATA_DIR, toPortablePath } = require("./lib/install-paths");
+const {
+  GENERATED_ROOTS,
+  INSTALL_REPORT_PATH,
+  MANIFEST_PATH,
+  METADATA_DIR,
+  ORCHESTRATOR_PROMPT_PATH,
+  QUICK_REFERENCE_PATH,
+  START_PATH,
+  toPortablePath
+} = require("./lib/install-paths");
 const { renderTemplate } = require("./lib/render-template");
 
 const REPO_ROOT = path.resolve(__dirname, "..");
+const METADATA_TEMPLATE_FILES = [
+  ["start.md", START_PATH],
+  ["orchestrator-prompt.md", ORCHESTRATOR_PROMPT_PATH],
+  ["quick-reference.md", QUICK_REFERENCE_PATH]
+];
 
 async function loadBlueprint(name) {
   const blueprintPath = path.join(REPO_ROOT, "blueprints", name, "blueprint.json");
@@ -53,6 +67,10 @@ function addGeneratedHeader(content, templatePath, context) {
 }
 
 function buildRenderContext(targetDir, detected, blueprint, mode) {
+  const selectedAgents = blueprint.defaultAgents.join(", ");
+  const availablePrompts = blueprint.include.prompts.join(", ");
+  const availableWorkflows = blueprint.include.workflows.join(", ");
+
   return {
     projectName: detected.projectName,
     blueprintName: blueprint.id,
@@ -63,7 +81,13 @@ function buildRenderContext(targetDir, detected, blueprint, mode) {
     businessFocus: blueprint.businessConcerns.join(", "),
     generatedAt: new Date().toISOString(),
     installMode: mode,
-    targetPath: targetDir
+    targetPath: targetDir,
+    selectedAgents,
+    availablePrompts,
+    availableWorkflows,
+    startPath: toPortablePath(START_PATH),
+    orchestratorPromptPath: toPortablePath(ORCHESTRATOR_PROMPT_PATH),
+    quickReferencePath: toPortablePath(QUICK_REFERENCE_PATH)
   };
 }
 
@@ -109,6 +133,17 @@ async function buildFilePlan(blueprint, renderContext) {
     const rendered = renderTemplate(template, renderContext);
     filePlan.push({
       targetPath: toPortablePath(path.join(GENERATED_ROOTS.workflows, fileName)),
+      content: addGeneratedHeader(rendered, sourceTemplate, renderContext),
+      sourceTemplate
+    });
+  }
+
+  for (const [fileName, targetPath] of METADATA_TEMPLATE_FILES) {
+    const sourceTemplate = path.posix.join("templates", "meta", fileName);
+    const template = await loadTemplate("meta", fileName);
+    const rendered = renderTemplate(template, renderContext);
+    filePlan.push({
+      targetPath: toPortablePath(targetPath),
       content: addGeneratedHeader(rendered, sourceTemplate, renderContext),
       sourceTemplate
     });
@@ -278,7 +313,13 @@ async function buildInstallArtifacts(targetDir, detected, blueprint, renderConte
       workflowEmphasis: renderContext.workflowEmphasis,
       businessFocus: renderContext.businessFocus,
       generatedAt: renderContext.generatedAt,
-      installMode: renderContext.installMode
+      installMode: renderContext.installMode,
+      selectedAgents: renderContext.selectedAgents,
+      availablePrompts: renderContext.availablePrompts,
+      availableWorkflows: renderContext.availableWorkflows,
+      startPath: renderContext.startPath,
+      orchestratorPromptPath: renderContext.orchestratorPromptPath,
+      quickReferencePath: renderContext.quickReferencePath
     },
     toolOwnedFiles: allToolOwnedFiles
   };
@@ -384,6 +425,8 @@ async function main() {
   } else {
     console.log("");
     console.log(`Updated metadata: ${MANIFEST_PATH}, ${INSTALL_REPORT_PATH}`);
+    console.log(`Start here: ${START_PATH}`);
+    console.log(`Paste this prompt into Codex: ${ORCHESTRATOR_PROMPT_PATH}`);
   }
 }
 

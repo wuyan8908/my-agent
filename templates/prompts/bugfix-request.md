@@ -8,6 +8,7 @@ Describe the bug with observed behavior, expected behavior, and repro steps.
 
 - detected stack: `{{detectedStack}}`
 - package manager: `{{packageManager}}`
+- default orchestrator prompt: `{{orchestratorPromptPath}}`
 - repro steps
 - logs or error message
 - affected area
@@ -27,3 +28,4 @@ Describe the bug with observed behavior, expected behavior, and repro steps.
 - `software-architect` checks whether the bug is local or systemic
 - owning implementation agent fixes it
 - `code-reviewer` verifies the fix is narrow and safe
+- use subagents only if investigation, fix, and review can be split cleanly

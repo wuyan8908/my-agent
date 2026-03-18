@@ -10,6 +10,9 @@ const GENERATED_ROOTS = {
 const METADATA_DIR = ".codex-team";
 const MANIFEST_PATH = path.join(METADATA_DIR, "manifest.json");
 const INSTALL_REPORT_PATH = path.join(METADATA_DIR, "install-report.json");
+const START_PATH = path.join(METADATA_DIR, "start.md");
+const ORCHESTRATOR_PROMPT_PATH = path.join(METADATA_DIR, "orchestrator-prompt.md");
+const QUICK_REFERENCE_PATH = path.join(METADATA_DIR, "quick-reference.md");
 
 function toPortablePath(filePath) {
   return filePath.split(path.sep).join("/");
@@ -26,7 +29,7 @@ function isGeneratedContentPath(relativePath) {
 
 function isMetadataPath(relativePath) {
   const portablePath = toPortablePath(relativePath);
-  return portablePath === toPortablePath(MANIFEST_PATH) || portablePath === toPortablePath(INSTALL_REPORT_PATH);
+  return portablePath.startsWith(`${toPortablePath(METADATA_DIR)}/`);
 }
 
 function isManagedPath(relativePath) {
@@ -38,6 +41,9 @@ module.exports = {
   INSTALL_REPORT_PATH,
   MANIFEST_PATH,
   METADATA_DIR,
+  ORCHESTRATOR_PROMPT_PATH,
+  QUICK_REFERENCE_PATH,
+  START_PATH,
   isGeneratedContentPath,
   isManagedPath,
   isMetadataPath,

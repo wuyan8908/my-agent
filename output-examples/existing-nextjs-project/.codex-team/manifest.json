@@ -18,7 +18,13 @@
     "workflowEmphasis": "feature delivery, bugfixes, release readiness, feedback synthesis",
     "businessFocus": "activation, retention, permissions, uptime, observability, support quality",
     "generatedAt": "2026-03-18T00:00:00.000Z",
-    "installMode": "smart"
+    "installMode": "smart",
+    "selectedAgents": "project-shepherd, product-manager, software-architect, frontend-developer, backend-architect, devops-automator, code-reviewer, support-responder, feedback-synthesizer, analytics-reporter, content-creator",
+    "availablePrompts": "new-feature-request.md, bugfix-request.md, seo-optimization-request.md, support-issue-analysis.md, weekly-feedback-synthesis.md",
+    "availableWorkflows": "feature-delivery.md, bugfix-flow.md, release-readiness.md, support-to-product-feedback.md",
+    "startPath": ".codex-team/start.md",
+    "orchestratorPromptPath": ".codex-team/orchestrator-prompt.md",
+    "quickReferencePath": ".codex-team/quick-reference.md"
   },
   "defaultAgents": [
     "project-shepherd",
@@ -37,6 +43,21 @@
     {
       "path": "agents/frontend-developer.md",
       "sourceTemplate": "templates/agents/frontend-developer.md",
+      "checksum": "example"
+    },
+    {
+      "path": ".codex-team/orchestrator-prompt.md",
+      "sourceTemplate": "templates/meta/orchestrator-prompt.md",
+      "checksum": "example"
+    },
+    {
+      "path": ".codex-team/quick-reference.md",
+      "sourceTemplate": "templates/meta/quick-reference.md",
+      "checksum": "example"
+    },
+    {
+      "path": ".codex-team/start.md",
+      "sourceTemplate": "templates/meta/start.md",
       "checksum": "example"
     },
     {

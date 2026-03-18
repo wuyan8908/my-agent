@@ -24,3 +24,4 @@ Install assumptions for this repo:
 - every handoff includes context, done work, open questions, and next owner
 - every agent writes for the next agent, not just the user
 - avoid speculative refactors unless the task requires them
+- one orchestrator should consolidate subagent output before final delivery

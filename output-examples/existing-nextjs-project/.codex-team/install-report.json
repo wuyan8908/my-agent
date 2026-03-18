@@ -18,7 +18,10 @@
     "agents/frontend-developer.md",
     "docs/ai-team/operating-model.md",
     "prompts/ai-team/seo-optimization-request.md",
-    "workflows/ai-team/release-readiness.md"
+    "workflows/ai-team/release-readiness.md",
+    ".codex-team/start.md",
+    ".codex-team/orchestrator-prompt.md",
+    ".codex-team/quick-reference.md"
   ],
   "updatedFiles": [],
   "skippedFiles": [],
@@ -29,6 +32,21 @@
     {
       "path": "agents/frontend-developer.md",
       "sourceTemplate": "templates/agents/frontend-developer.md",
+      "checksum": "example"
+    },
+    {
+      "path": ".codex-team/orchestrator-prompt.md",
+      "sourceTemplate": "templates/meta/orchestrator-prompt.md",
+      "checksum": "example"
+    },
+    {
+      "path": ".codex-team/quick-reference.md",
+      "sourceTemplate": "templates/meta/quick-reference.md",
+      "checksum": "example"
+    },
+    {
+      "path": ".codex-team/start.md",
+      "sourceTemplate": "templates/meta/start.md",
       "checksum": "example"
     },
     {
