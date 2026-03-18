@@ -1,0 +1,15 @@
+{
+  "generatedBy": "codex-team-bootstrapper",
+  "blueprint": "internal-tools",
+  "stack": "node-api",
+  "defaultAgents": [
+    "project-shepherd",
+    "product-manager",
+    "software-architect",
+    "backend-architect",
+    "devops-automator",
+    "code-reviewer",
+    "support-responder",
+    "analytics-reporter"
+  ]
+}

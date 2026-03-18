@@ -1,0 +1,14 @@
+{
+  "generatedBy": "codex-team-bootstrapper",
+  "blueprint": "core",
+  "stack": "empty",
+  "defaultAgents": [
+    "project-shepherd",
+    "product-manager",
+    "software-architect",
+    "frontend-developer",
+    "backend-architect",
+    "devops-automator",
+    "code-reviewer"
+  ]
+}

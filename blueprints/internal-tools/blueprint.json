@@ -1,0 +1,52 @@
+{
+  "id": "internal-tools",
+  "name": "Internal Tools",
+  "description": "Agent team for operational systems, admin workflows, and internal product delivery.",
+  "defaultAgents": [
+    "project-shepherd",
+    "product-manager",
+    "software-architect",
+    "backend-architect",
+    "devops-automator",
+    "code-reviewer",
+    "support-responder",
+    "analytics-reporter"
+  ],
+  "include": {
+    "docs": [
+      "team-overview.md",
+      "operating-model.md",
+      "handoff-rules.md",
+      "definition-of-done.md"
+    ],
+    "prompts": [
+      "new-feature-request.md",
+      "bugfix-request.md",
+      "support-issue-analysis.md",
+      "weekly-feedback-synthesis.md"
+    ],
+    "workflows": [
+      "bugfix-flow.md",
+      "release-readiness.md",
+      "support-to-product-feedback.md"
+    ]
+  },
+  "instructions": [
+    "Optimize for reliability, permissions, and auditability.",
+    "Assume operational clarity matters more than marketing polish.",
+    "Keep admin workflows low-friction and safe."
+  ],
+  "businessConcerns": [
+    "correctness",
+    "auditability",
+    "internal efficiency",
+    "permissions",
+    "maintainability",
+    "support burden"
+  ],
+  "workflowEmphasis": [
+    "bugfix flow",
+    "release readiness",
+    "operational handoffs"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "ecommerce",
+  "name": "Ecommerce",
+  "description": "Practical team for storefront, checkout, order, and support-heavy product work.",
+  "defaultAgents": [
+    "project-shepherd",
+    "product-manager",
+    "software-architect",
+    "frontend-developer",
+    "backend-architect",
+    "devops-automator",
+    "code-reviewer",
+    "seo-specialist",
+    "support-responder",
+    "feedback-synthesizer",
+    "analytics-reporter",
+    "sales-proposal-strategist",
+    "account-strategist",
+    "content-creator"
+  ],
+  "include": {
+    "docs": [
+      "team-overview.md",
+      "operating-model.md",
+      "delivery-workflow.md",
+      "handoff-rules.md",
+      "definition-of-done.md"
+    ],
+    "prompts": [
+      "new-feature-request.md",
+      "bugfix-request.md",
+      "order-management-design.md",
+      "sales-proposal-request.md",
+      "seo-optimization-request.md",
+      "support-issue-analysis.md",
+      "weekly-feedback-synthesis.md"
+    ],
+    "workflows": [
+      "feature-delivery.md",
+      "bugfix-flow.md",
+      "release-readiness.md",
+      "support-to-product-feedback.md",
+      "sales-to-product-handoff.md"
+    ]
+  },
+  "instructions": [
+    "Treat checkout, payment, order, inventory, and support flows as first-class.",
+    "Optimize for conversion and operational clarity.",
+    "Prefer practical implementation paths over abstract debate."
+  ],
+  "businessConcerns": [
+    "conversion",
+    "checkout reliability",
+    "inventory correctness",
+    "refunds and returns",
+    "support load",
+    "seo",
+    "retention"
+  ],
+  "workflowEmphasis": [
+    "feature delivery",
+    "support feedback loops",
+    "release readiness",
+    "sales-to-product handoff"
+  ]
+}

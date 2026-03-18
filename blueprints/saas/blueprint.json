@@ -1,0 +1,59 @@
+{
+  "id": "saas",
+  "name": "SaaS",
+  "description": "Balanced team for product-led SaaS delivery and ongoing product iteration.",
+  "defaultAgents": [
+    "project-shepherd",
+    "product-manager",
+    "software-architect",
+    "frontend-developer",
+    "backend-architect",
+    "devops-automator",
+    "code-reviewer",
+    "support-responder",
+    "feedback-synthesizer",
+    "analytics-reporter",
+    "content-creator"
+  ],
+  "include": {
+    "docs": [
+      "team-overview.md",
+      "operating-model.md",
+      "delivery-workflow.md",
+      "handoff-rules.md",
+      "definition-of-done.md"
+    ],
+    "prompts": [
+      "new-feature-request.md",
+      "bugfix-request.md",
+      "seo-optimization-request.md",
+      "support-issue-analysis.md",
+      "weekly-feedback-synthesis.md"
+    ],
+    "workflows": [
+      "feature-delivery.md",
+      "bugfix-flow.md",
+      "release-readiness.md",
+      "support-to-product-feedback.md"
+    ]
+  },
+  "instructions": [
+    "Optimize for onboarding, permissions, stability, and retention.",
+    "Keep product feedback loops tight.",
+    "Bias toward incremental delivery in the existing stack."
+  ],
+  "businessConcerns": [
+    "activation",
+    "retention",
+    "permissions",
+    "uptime",
+    "observability",
+    "support quality"
+  ],
+  "workflowEmphasis": [
+    "feature delivery",
+    "bugfixes",
+    "release readiness",
+    "feedback synthesis"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "generatedBy": "codex-team-bootstrapper",
+  "blueprint": "saas",
+  "stack": "nextjs",
+  "defaultAgents": [
+    "project-shepherd",
+    "product-manager",
+    "software-architect",
+    "frontend-developer",
+    "backend-architect",
+    "devops-automator",
+    "code-reviewer",
+    "support-responder",
+    "feedback-synthesizer",
+    "analytics-reporter",
+    "content-creator"
+  ]
+}

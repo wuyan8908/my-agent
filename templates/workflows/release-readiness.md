@@ -1,0 +1,25 @@
+# Release Readiness Workflow
+
+## Trigger
+
+Use before shipping meaningful changes.
+
+## Primary Agents
+
+- `devops-automator`
+- `code-reviewer`
+- `project-shepherd`
+
+## Steps
+
+1. Confirm scope is complete.
+2. Check tests, build, and deployment assumptions.
+3. Review release notes and rollback risk.
+4. Verify cross-file naming and doc alignment.
+5. Decide whether to ship or hold.
+
+## Exit Criteria
+
+- no known blockers remain
+- validation is explicit
+- release risk is acceptable

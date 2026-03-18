@@ -1,0 +1,49 @@
+{
+  "id": "core",
+  "name": "Core",
+  "description": "Lean default team for greenfield or unknown repositories.",
+  "defaultAgents": [
+    "project-shepherd",
+    "product-manager",
+    "software-architect",
+    "frontend-developer",
+    "backend-architect",
+    "devops-automator",
+    "code-reviewer"
+  ],
+  "include": {
+    "docs": [
+      "team-overview.md",
+      "operating-model.md",
+      "delivery-workflow.md",
+      "handoff-rules.md",
+      "definition-of-done.md"
+    ],
+    "prompts": [
+      "new-feature-request.md",
+      "bugfix-request.md",
+      "weekly-feedback-synthesis.md"
+    ],
+    "workflows": [
+      "feature-delivery.md",
+      "bugfix-flow.md",
+      "release-readiness.md"
+    ]
+  },
+  "instructions": [
+    "Keep the team lean and reusable.",
+    "Do not assume a specific product domain.",
+    "Prefer maintainability and release safety over breadth."
+  ],
+  "businessConcerns": [
+    "delivery speed",
+    "maintainability",
+    "code quality",
+    "deploy safety"
+  ],
+  "workflowEmphasis": [
+    "feature delivery",
+    "bugfixes",
+    "release readiness"
+  ]
+}
