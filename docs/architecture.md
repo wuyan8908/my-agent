@@ -47,9 +47,10 @@ Rendering is intentionally simple:
 Supported variables include:
 
 - `projectName`
-- `blueprintName`
-- `detectedStack`
+- `projectType`
+- `stack`
 - `repoMode`
+- `blueprint`
 - `packageManager`
 - `workflowEmphasis`
 - `businessFocus`
@@ -60,7 +61,16 @@ Supported variables include:
 - `availableWorkflows`
 - `startPath`
 - `orchestratorPromptPath`
+- `fastModePromptPath`
 - `quickReferencePath`
+
+Compatibility aliases also render:
+
+- `blueprintName` -> `blueprint`
+- `detectedStack` -> `stack`
+- `businessConcerns` -> `businessFocus`
+
+`projectType` is the install profile label derived from the selected blueprint. `stack` is the short repo stack signal exposed by detection.
 
 ## Generated Artifacts
 
@@ -75,6 +85,7 @@ Generated onboarding and metadata live in:
 
 - `.codex-team/start.md`
 - `.codex-team/orchestrator-prompt.md`
+- `.codex-team/fast-mode-prompt.md`
 - `.codex-team/quick-reference.md`
 - `.codex-team/manifest.json`
 - `.codex-team/install-report.json`

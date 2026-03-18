@@ -15,8 +15,10 @@ Add: `<feature>`
 
 ## Inputs
 
-- repo type: `<empty | existing app>`
-- detected stack: `<nextjs | node-api | unknown>`
+- repo type: `{{repoMode}}`
+- detected stack: `{{detectedStack}}`
+- blueprint: `{{blueprintName}}`
+- workflow emphasis: `{{workflowEmphasis}}`
 - constraints: `<performance, UX, security, compatibility>`
 - patterns to preserve: `<list>`
 
@@ -30,8 +32,10 @@ Add: `<feature>`
 
 ## Coordination
 
+- start from `{{orchestratorPromptPath}}`
 - `product-manager` clarifies scope
 - `software-architect` checks boundaries
 - `frontend-developer` or `backend-architect` implements
 - `code-reviewer` verifies the result
+- use subagents only for bounded work that can be consolidated cleanly
 - keep one orchestrator responsible for final consolidation

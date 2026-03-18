@@ -24,7 +24,11 @@
     "availableWorkflows": "feature-delivery.md, bugfix-flow.md, release-readiness.md, support-to-product-feedback.md",
     "startPath": ".codex-team/start.md",
     "orchestratorPromptPath": ".codex-team/orchestrator-prompt.md",
-    "quickReferencePath": ".codex-team/quick-reference.md"
+    "quickReferencePath": ".codex-team/quick-reference.md",
+    "projectType": "saas",
+    "blueprint": "saas",
+    "stack": "nextjs",
+    "fastModePromptPath": ".codex-team/fast-mode-prompt.md"
   },
   "defaultAgents": [
     "project-shepherd",
@@ -41,9 +45,19 @@
   ],
   "toolOwnedFiles": [
     {
-      "path": "agents/frontend-developer.md",
-      "sourceTemplate": "templates/agents/frontend-developer.md",
+      "path": ".codex-team/fast-mode-prompt.md",
+      "sourceTemplate": "templates/meta/fast-mode-prompt.md",
       "checksum": "example"
+    },
+    {
+      "path": ".codex-team/install-report.json",
+      "sourceTemplate": null,
+      "checksum": null
+    },
+    {
+      "path": ".codex-team/manifest.json",
+      "sourceTemplate": null,
+      "checksum": null
     },
     {
       "path": ".codex-team/orchestrator-prompt.md",
@@ -61,14 +75,13 @@
       "checksum": "example"
     },
     {
-      "path": ".codex-team/manifest.json",
-      "sourceTemplate": null,
-      "checksum": null
-    },
-    {
-      "path": ".codex-team/install-report.json",
-      "sourceTemplate": null,
-      "checksum": null
+      "path": "agents/frontend-developer.md",
+      "sourceTemplate": "templates/agents/frontend-developer.md",
+      "checksum": "example"
     }
-  ]
+  ],
+  "projectType": "saas",
+  "stack": "nextjs",
+  "blueprint": "saas",
+  "packageManager": "pnpm"
 }

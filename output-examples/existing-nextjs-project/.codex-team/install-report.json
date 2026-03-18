@@ -15,13 +15,14 @@
   "recommendedInstallMode": "smart",
   "packageManager": "pnpm",
   "createdFiles": [
+    ".codex-team/fast-mode-prompt.md",
+    ".codex-team/orchestrator-prompt.md",
+    ".codex-team/quick-reference.md",
+    ".codex-team/start.md",
     "agents/frontend-developer.md",
     "docs/ai-team/operating-model.md",
     "prompts/ai-team/seo-optimization-request.md",
-    "workflows/ai-team/release-readiness.md",
-    ".codex-team/start.md",
-    ".codex-team/orchestrator-prompt.md",
-    ".codex-team/quick-reference.md"
+    "workflows/ai-team/release-readiness.md"
   ],
   "updatedFiles": [],
   "skippedFiles": [],
@@ -30,9 +31,19 @@
   "deletedFiles": [],
   "toolOwnedFiles": [
     {
-      "path": "agents/frontend-developer.md",
-      "sourceTemplate": "templates/agents/frontend-developer.md",
+      "path": ".codex-team/fast-mode-prompt.md",
+      "sourceTemplate": "templates/meta/fast-mode-prompt.md",
       "checksum": "example"
+    },
+    {
+      "path": ".codex-team/install-report.json",
+      "sourceTemplate": null,
+      "checksum": null
+    },
+    {
+      "path": ".codex-team/manifest.json",
+      "sourceTemplate": null,
+      "checksum": null
     },
     {
       "path": ".codex-team/orchestrator-prompt.md",
@@ -50,16 +61,14 @@
       "checksum": "example"
     },
     {
-      "path": ".codex-team/manifest.json",
-      "sourceTemplate": null,
-      "checksum": null
-    },
-    {
-      "path": ".codex-team/install-report.json",
-      "sourceTemplate": null,
-      "checksum": null
+      "path": "agents/frontend-developer.md",
+      "sourceTemplate": "templates/agents/frontend-developer.md",
+      "checksum": "example"
     }
   ],
   "generatedAt": "2026-03-18T00:00:00.000Z",
-  "manifestPath": ".codex-team/manifest.json"
+  "manifestPath": ".codex-team/manifest.json",
+  "projectType": "saas",
+  "stack": "nextjs",
+  "blueprint": "saas"
 }

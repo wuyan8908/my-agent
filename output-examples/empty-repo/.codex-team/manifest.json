@@ -24,7 +24,11 @@
     "availableWorkflows": "feature-delivery.md, bugfix-flow.md, release-readiness.md",
     "startPath": ".codex-team/start.md",
     "orchestratorPromptPath": ".codex-team/orchestrator-prompt.md",
-    "quickReferencePath": ".codex-team/quick-reference.md"
+    "quickReferencePath": ".codex-team/quick-reference.md",
+    "projectType": "core",
+    "blueprint": "core",
+    "stack": "empty",
+    "fastModePromptPath": ".codex-team/fast-mode-prompt.md"
   },
   "defaultAgents": [
     "project-shepherd",
@@ -37,9 +41,19 @@
   ],
   "toolOwnedFiles": [
     {
-      "path": "agents/project-shepherd.md",
-      "sourceTemplate": "templates/agents/project-shepherd.md",
+      "path": ".codex-team/fast-mode-prompt.md",
+      "sourceTemplate": "templates/meta/fast-mode-prompt.md",
       "checksum": "example"
+    },
+    {
+      "path": ".codex-team/install-report.json",
+      "sourceTemplate": null,
+      "checksum": null
+    },
+    {
+      "path": ".codex-team/manifest.json",
+      "sourceTemplate": null,
+      "checksum": null
     },
     {
       "path": ".codex-team/orchestrator-prompt.md",
@@ -57,14 +71,13 @@
       "checksum": "example"
     },
     {
-      "path": ".codex-team/manifest.json",
-      "sourceTemplate": null,
-      "checksum": null
-    },
-    {
-      "path": ".codex-team/install-report.json",
-      "sourceTemplate": null,
-      "checksum": null
+      "path": "agents/project-shepherd.md",
+      "sourceTemplate": "templates/agents/project-shepherd.md",
+      "checksum": "example"
     }
-  ]
+  ],
+  "projectType": "core",
+  "stack": "empty",
+  "blueprint": "core",
+  "packageManager": "unknown"
 }

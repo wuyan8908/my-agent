@@ -4,6 +4,8 @@
 
 Turn a support issue into a useful product signal.
 
+Start from `{{orchestratorPromptPath}}` and route the issue through the support workflow, not a freeform analysis.
+
 ## Inputs
 
 - customer report
@@ -26,3 +28,4 @@ Turn a support issue into a useful product signal.
 - `support-responder` drafts the customer-facing reply
 - `feedback-synthesizer` classifies the pattern
 - `project-shepherd` routes the follow-up
+- keep the output as one triaged handoff with a clear next owner

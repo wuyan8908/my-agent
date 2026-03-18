@@ -6,6 +6,7 @@ const path = require("path");
 const { detectProject } = require("./detect-project");
 const { loadInstallState, mergeIntoRepo } = require("./merge-into-repo");
 const {
+  FAST_MODE_PROMPT_PATH,
   GENERATED_ROOTS,
   INSTALL_REPORT_PATH,
   MANIFEST_PATH,
@@ -21,6 +22,7 @@ const REPO_ROOT = path.resolve(__dirname, "..");
 const METADATA_TEMPLATE_FILES = [
   ["start.md", START_PATH],
   ["orchestrator-prompt.md", ORCHESTRATOR_PROMPT_PATH],
+  ["fast-mode-prompt.md", FAST_MODE_PROMPT_PATH],
   ["quick-reference.md", QUICK_REFERENCE_PATH]
 ];
 
@@ -70,15 +72,20 @@ function buildRenderContext(targetDir, detected, blueprint, mode) {
   const selectedAgents = blueprint.defaultAgents.join(", ");
   const availablePrompts = blueprint.include.prompts.join(", ");
   const availableWorkflows = blueprint.include.workflows.join(", ");
+  const workflowEmphasis = blueprint.workflowEmphasis.join(", ");
+  const businessFocus = blueprint.businessConcerns.join(", ");
 
   return {
     projectName: detected.projectName,
+    projectType: blueprint.id,
+    blueprint: blueprint.id,
     blueprintName: blueprint.id,
+    stack: detected.stack,
     detectedStack: detected.stack,
     repoMode: detected.repoMode,
     packageManager: detected.packageManager,
-    workflowEmphasis: blueprint.workflowEmphasis.join(", "),
-    businessFocus: blueprint.businessConcerns.join(", "),
+    workflowEmphasis,
+    businessFocus,
     generatedAt: new Date().toISOString(),
     installMode: mode,
     targetPath: targetDir,
@@ -87,6 +94,7 @@ function buildRenderContext(targetDir, detected, blueprint, mode) {
     availableWorkflows,
     startPath: toPortablePath(START_PATH),
     orchestratorPromptPath: toPortablePath(ORCHESTRATOR_PROMPT_PATH),
+    fastModePromptPath: toPortablePath(FAST_MODE_PROMPT_PATH),
     quickReferencePath: toPortablePath(QUICK_REFERENCE_PATH)
   };
 }
@@ -196,10 +204,11 @@ function formatSummary(targetDir, detected, blueprint, mode, mergeResult) {
   return [
     `targetDir: ${targetDir}`,
     `projectName: ${detected.projectName}`,
+    `projectType: ${blueprint.id}`,
     `repoMode: ${detected.repoMode}`,
-    `detectedStack: ${detected.stack}`,
+    `stack: ${detected.stack}`,
     `suggestedBlueprint: ${detected.blueprint}`,
-    `selectedBlueprint: ${blueprint.id}`,
+    `blueprint: ${blueprint.id}`,
     `installMode: ${mode}`,
     `created: ${mergeResult.summary.createdFiles.length}`,
     `updated: ${mergeResult.summary.updatedFiles.length}`,
@@ -289,10 +298,13 @@ async function buildInstallArtifacts(targetDir, detected, blueprint, renderConte
     version: "0.2.0",
     targetPath: targetDir,
     projectName: renderContext.projectName,
+    projectType: renderContext.projectType,
     repoMode: renderContext.repoMode,
     detectedStack: renderContext.detectedStack,
+    stack: renderContext.stack,
     suggestedBlueprint: detected.blueprint,
     selectedBlueprint: blueprint.id,
+    blueprint: blueprint.id,
     packageManager: renderContext.packageManager,
     installMode: renderContext.installMode,
     recommendedInstallMode: blueprint.recommendedInstallMode || "safe",
@@ -306,7 +318,10 @@ async function buildInstallArtifacts(targetDir, detected, blueprint, renderConte
     instructions: blueprint.instructions,
     templateVariables: {
       projectName: renderContext.projectName,
+      projectType: renderContext.projectType,
+      blueprint: renderContext.blueprint,
       blueprintName: renderContext.blueprintName,
+      stack: renderContext.stack,
       detectedStack: renderContext.detectedStack,
       repoMode: renderContext.repoMode,
       packageManager: renderContext.packageManager,
@@ -319,6 +334,7 @@ async function buildInstallArtifacts(targetDir, detected, blueprint, renderConte
       availableWorkflows: renderContext.availableWorkflows,
       startPath: renderContext.startPath,
       orchestratorPromptPath: renderContext.orchestratorPromptPath,
+      fastModePromptPath: renderContext.fastModePromptPath,
       quickReferencePath: renderContext.quickReferencePath
     },
     toolOwnedFiles: allToolOwnedFiles
@@ -327,11 +343,14 @@ async function buildInstallArtifacts(targetDir, detected, blueprint, renderConte
   const installReport = {
     targetPath: targetDir,
     projectName: renderContext.projectName,
+    projectType: renderContext.projectType,
     repoMode: renderContext.repoMode,
     detectedStack: renderContext.detectedStack,
+    stack: renderContext.stack,
     detectedSignals: detected.signals,
     suggestedBlueprint: detected.blueprint,
     selectedBlueprint: blueprint.id,
+    blueprint: blueprint.id,
     installMode: renderContext.installMode,
     recommendedInstallMode: blueprint.recommendedInstallMode || "safe",
     packageManager: renderContext.packageManager,
@@ -427,6 +446,7 @@ async function main() {
     console.log(`Updated metadata: ${MANIFEST_PATH}, ${INSTALL_REPORT_PATH}`);
     console.log(`Start here: ${START_PATH}`);
     console.log(`Paste this prompt into Codex: ${ORCHESTRATOR_PROMPT_PATH}`);
+    console.log(`For small tasks, use: ${FAST_MODE_PROMPT_PATH}`);
   }
 }
 

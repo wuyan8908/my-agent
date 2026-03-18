@@ -2,7 +2,7 @@
 
 - selectedBlueprint: `saas`
 - selectedInstallMode: `smart`
-- createdFiles: `7`
+- createdFiles: `8`
 - updatedFiles: `0`
 - skippedFiles: `0`
 - conflictsAvoided: `0`
@@ -12,3 +12,5 @@ Notes:
 - The install added a product-oriented team layer without touching app source files.
 - Frontend, support, and feedback workflows are available immediately.
 - Start with `.codex-team/start.md` and paste `.codex-team/orchestrator-prompt.md` into Codex.
+- For small bounded tasks, use `.codex-team/fast-mode-prompt.md`.
+- The exact first prompt is mirrored in `.codex-team/example-first-prompt.md`.

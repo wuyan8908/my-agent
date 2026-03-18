@@ -10,27 +10,28 @@
   "recommendedInstallMode": "safe",
   "packageManager": "unknown",
   "createdFiles": [
-    "agents/project-shepherd.md",
-    "agents/product-manager.md",
-    "agents/software-architect.md",
-    "agents/frontend-developer.md",
+    ".codex-team/fast-mode-prompt.md",
+    ".codex-team/orchestrator-prompt.md",
+    ".codex-team/quick-reference.md",
+    ".codex-team/start.md",
     "agents/backend-architect.md",
-    "agents/devops-automator.md",
     "agents/code-reviewer.md",
-    "docs/ai-team/team-overview.md",
-    "docs/ai-team/operating-model.md",
+    "agents/devops-automator.md",
+    "agents/frontend-developer.md",
+    "agents/product-manager.md",
+    "agents/project-shepherd.md",
+    "agents/software-architect.md",
+    "docs/ai-team/definition-of-done.md",
     "docs/ai-team/delivery-workflow.md",
     "docs/ai-team/handoff-rules.md",
-    "docs/ai-team/definition-of-done.md",
-    "prompts/ai-team/new-feature-request.md",
+    "docs/ai-team/operating-model.md",
+    "docs/ai-team/team-overview.md",
     "prompts/ai-team/bugfix-request.md",
+    "prompts/ai-team/new-feature-request.md",
     "prompts/ai-team/weekly-feedback-synthesis.md",
-    "workflows/ai-team/feature-delivery.md",
     "workflows/ai-team/bugfix-flow.md",
-    "workflows/ai-team/release-readiness.md",
-    ".codex-team/start.md",
-    ".codex-team/orchestrator-prompt.md",
-    ".codex-team/quick-reference.md"
+    "workflows/ai-team/feature-delivery.md",
+    "workflows/ai-team/release-readiness.md"
   ],
   "updatedFiles": [],
   "skippedFiles": [],
@@ -39,9 +40,19 @@
   "deletedFiles": [],
   "toolOwnedFiles": [
     {
-      "path": "agents/project-shepherd.md",
-      "sourceTemplate": "templates/agents/project-shepherd.md",
+      "path": ".codex-team/fast-mode-prompt.md",
+      "sourceTemplate": "templates/meta/fast-mode-prompt.md",
       "checksum": "example"
+    },
+    {
+      "path": ".codex-team/install-report.json",
+      "sourceTemplate": null,
+      "checksum": null
+    },
+    {
+      "path": ".codex-team/manifest.json",
+      "sourceTemplate": null,
+      "checksum": null
     },
     {
       "path": ".codex-team/orchestrator-prompt.md",
@@ -59,16 +70,14 @@
       "checksum": "example"
     },
     {
-      "path": ".codex-team/manifest.json",
-      "sourceTemplate": null,
-      "checksum": null
-    },
-    {
-      "path": ".codex-team/install-report.json",
-      "sourceTemplate": null,
-      "checksum": null
+      "path": "agents/project-shepherd.md",
+      "sourceTemplate": "templates/agents/project-shepherd.md",
+      "checksum": "example"
     }
   ],
   "generatedAt": "2026-03-18T00:00:00.000Z",
-  "manifestPath": ".codex-team/manifest.json"
+  "manifestPath": ".codex-team/manifest.json",
+  "projectType": "core",
+  "stack": "empty",
+  "blueprint": "core"
 }

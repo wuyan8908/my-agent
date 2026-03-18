@@ -2,11 +2,20 @@
 
 # Start Here
 
-This AI dev workflow layer is installed for `existing-node-api` using the `internal-tools` blueprint.
+This onboarding layer is installed for `existing-node-api` with the `internal-tools` blueprint.
+Repo mode: `brownfield`. Stack: `node-api`.
 
-## What To Do Next
+Installed system:
 
-1. Open `.codex-team/orchestrator-prompt.md`.
-2. Paste that prompt into Codex with the backend task.
-3. Use the installed bugfix or support workflow.
-4. Keep one orchestrator responsible for final consolidation.
+- agents: `project-shepherd, product-manager, software-architect, backend-architect, devops-automator, code-reviewer, support-responder, analytics-reporter`
+- prompts: `new-feature-request.md, bugfix-request.md, support-issue-analysis.md, weekly-feedback-synthesis.md`
+- workflows: `bugfix-flow.md, release-readiness.md, support-to-product-feedback.md`
+
+Use `orchestrator mode` for multi-step work, cross-file changes, or anything that may need subagents. Use `fast mode` for small, bounded tasks that should finish in one pass.
+
+## Do This
+
+1. If the task is small, open `.codex-team/fast-mode-prompt.md`.
+2. If the task is broad, open `.codex-team/orchestrator-prompt.md`.
+3. Keep one orchestrator responsible when work spans multiple files or roles.
+4. Use `.codex-team/quick-reference.md` when you need the short map.

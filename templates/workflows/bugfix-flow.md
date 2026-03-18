@@ -4,6 +4,7 @@
 
 Use when behavior is broken, unstable, or inconsistent.
 Start from `{{orchestratorPromptPath}}` and the installed bugfix prompt.
+Use subagents only when reproduction, fix, and verification can be separated without losing context.
 
 ## Primary Agents
 
@@ -14,12 +15,12 @@ Start from `{{orchestratorPromptPath}}` and the installed bugfix prompt.
 
 ## Steps
 
-1. Reproduce the issue.
-2. Identify the smallest failing boundary.
-3. Decide whether investigation, fix, and review can be split without blocking each other.
+1. Reproduce the issue and capture the smallest failing case.
+2. Identify the boundary that actually breaks.
+3. Decide whether a subagent can investigate or verify a separate slice.
 4. Fix the root cause, not the symptom.
-5. Add the narrowest useful regression check.
-6. Verify adjacent behavior did not regress.
+5. Add the narrowest regression check that proves the fix.
+6. Verify adjacent behavior and report any unresolved ambiguity.
 
 ## Exit Criteria
 

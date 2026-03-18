@@ -15,3 +15,4 @@
 - keep handoffs short, specific, and actionable
 - if a handoff blocks the next step, say so directly
 - the orchestrator owns the final consolidation step
+- include the exact workflow or prompt that should be used next when relevant

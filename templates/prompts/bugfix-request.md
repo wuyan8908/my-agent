@@ -8,6 +8,7 @@ Describe the bug with observed behavior, expected behavior, and repro steps.
 
 - detected stack: `{{detectedStack}}`
 - package manager: `{{packageManager}}`
+- repo mode: `{{repoMode}}`
 - default orchestrator prompt: `{{orchestratorPromptPath}}`
 - repro steps
 - logs or error message
@@ -24,6 +25,7 @@ Describe the bug with observed behavior, expected behavior, and repro steps.
 
 ## Coordination
 
+- start from `{{orchestratorPromptPath}}`
 - `project-shepherd` confirms scope
 - `software-architect` checks whether the bug is local or systemic
 - owning implementation agent fixes it

@@ -4,6 +4,9 @@ This example shows a brownfield install into a customer-facing Next.js applicati
 
 The day-1 entrypoint is `.codex-team/start.md`, which routes the user into the orchestrator prompt and the installed feature or bugfix workflow.
 
+For the exact first prompt, see `.codex-team/example-first-prompt.md`.
+For a small bounded task, see `.codex-team/fast-mode-prompt.md`.
+
 Notable differences from an empty repo install:
 
 - stronger emphasis on existing conventions

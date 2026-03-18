@@ -7,6 +7,7 @@
 3. Define inputs, outputs, and constraints.
 4. Execute in small slices.
 5. Review before merge.
+6. Consolidate into one final answer or release recommendation.
 
 Install assumptions for this repo:
 - mode: `{{repoMode}}`
@@ -25,3 +26,4 @@ Install assumptions for this repo:
 - every agent writes for the next agent, not just the user
 - avoid speculative refactors unless the task requires them
 - one orchestrator should consolidate subagent output before final delivery
+- use subagents only when a slice is bounded enough to merge without guesswork

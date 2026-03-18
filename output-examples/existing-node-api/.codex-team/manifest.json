@@ -24,7 +24,11 @@
     "availableWorkflows": "bugfix-flow.md, release-readiness.md, support-to-product-feedback.md",
     "startPath": ".codex-team/start.md",
     "orchestratorPromptPath": ".codex-team/orchestrator-prompt.md",
-    "quickReferencePath": ".codex-team/quick-reference.md"
+    "quickReferencePath": ".codex-team/quick-reference.md",
+    "projectType": "internal-tools",
+    "blueprint": "internal-tools",
+    "stack": "node-api",
+    "fastModePromptPath": ".codex-team/fast-mode-prompt.md"
   },
   "defaultAgents": [
     "project-shepherd",
@@ -38,9 +42,19 @@
   ],
   "toolOwnedFiles": [
     {
-      "path": "agents/backend-architect.md",
-      "sourceTemplate": "templates/agents/backend-architect.md",
+      "path": ".codex-team/fast-mode-prompt.md",
+      "sourceTemplate": "templates/meta/fast-mode-prompt.md",
       "checksum": "example"
+    },
+    {
+      "path": ".codex-team/install-report.json",
+      "sourceTemplate": null,
+      "checksum": null
+    },
+    {
+      "path": ".codex-team/manifest.json",
+      "sourceTemplate": null,
+      "checksum": null
     },
     {
       "path": ".codex-team/orchestrator-prompt.md",
@@ -58,14 +72,13 @@
       "checksum": "example"
     },
     {
-      "path": ".codex-team/manifest.json",
-      "sourceTemplate": null,
-      "checksum": null
-    },
-    {
-      "path": ".codex-team/install-report.json",
-      "sourceTemplate": null,
-      "checksum": null
+      "path": "agents/backend-architect.md",
+      "sourceTemplate": "templates/agents/backend-architect.md",
+      "checksum": "example"
     }
-  ]
+  ],
+  "projectType": "internal-tools",
+  "stack": "node-api",
+  "blueprint": "internal-tools",
+  "packageManager": "npm"
 }

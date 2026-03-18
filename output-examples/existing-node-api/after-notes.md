@@ -2,7 +2,7 @@
 
 - selectedBlueprint: `internal-tools`
 - selectedInstallMode: `safe`
-- createdFiles: `7`
+- createdFiles: `8`
 - updatedFiles: `0`
 - skippedFiles: `0`
 - conflictsAvoided: `0`
@@ -12,3 +12,5 @@ Notes:
 - Backend, devops, and support-facing workflow assets were installed.
 - No unrelated user-owned files were touched.
 - The next safe step is to open `.codex-team/start.md` and use the support or bugfix workflow against a real issue.
+- For small bounded tasks, use `.codex-team/fast-mode-prompt.md`.
+- The exact first prompt is mirrored in `.codex-team/example-first-prompt.md`.

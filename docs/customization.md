@@ -12,14 +12,25 @@
 Templates support a small fixed render context:
 
 - `projectName`
-- `blueprintName`
-- `detectedStack`
+- `projectType`
+- `stack`
 - `repoMode`
+- `blueprint`
 - `packageManager`
 - `workflowEmphasis`
 - `businessFocus`
 - `generatedAt`
 - `installMode`
+- `startPath`
+- `orchestratorPromptPath`
+- `fastModePromptPath`
+- `quickReferencePath`
+
+Compatibility aliases also work:
+
+- `blueprintName` -> `blueprint`
+- `detectedStack` -> `stack`
+- `businessConcerns` -> `businessFocus`
 
 Use variables when they improve trust or repo-specific usefulness. Avoid threading them through every section or changing stable headings.
 

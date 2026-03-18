@@ -2,11 +2,20 @@
 
 # Start Here
 
-This AI dev workflow layer is installed for `existing-nextjs-project` using the `saas` blueprint.
+This onboarding layer is installed for `existing-nextjs-project` with the `saas` blueprint.
+Repo mode: `brownfield`. Stack: `nextjs`.
 
-## What To Do Next
+Installed system:
 
-1. Open `.codex-team/orchestrator-prompt.md`.
-2. Paste that prompt into Codex with the real task.
-3. Use the installed feature or bugfix workflow.
-4. Keep one orchestrator responsible for final consolidation.
+- agents: `project-shepherd, product-manager, software-architect, frontend-developer, backend-architect, devops-automator, code-reviewer, support-responder, feedback-synthesizer, analytics-reporter, content-creator`
+- prompts: `new-feature-request.md, bugfix-request.md, seo-optimization-request.md, support-issue-analysis.md, weekly-feedback-synthesis.md`
+- workflows: `feature-delivery.md, bugfix-flow.md, release-readiness.md, support-to-product-feedback.md`
+
+Use `orchestrator mode` for multi-step work, cross-file changes, or anything that may need subagents. Use `fast mode` for small, bounded tasks that should finish in one pass.
+
+## Do This
+
+1. If the task is small, open `.codex-team/fast-mode-prompt.md`.
+2. If the task is broad, open `.codex-team/orchestrator-prompt.md`.
+3. Keep one orchestrator responsible when work spans multiple files or roles.
+4. Use `.codex-team/quick-reference.md` when you need the short map.

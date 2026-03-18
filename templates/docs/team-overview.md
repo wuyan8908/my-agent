@@ -5,6 +5,7 @@
 Describe the installed AI team in one place so Codex can see who owns what and how work moves.
 
 This team package is installed for `{{projectName}}` using the `{{blueprintName}}` blueprint.
+Start new work from `{{orchestratorPromptPath}}`.
 
 ## Team Map
 
@@ -23,4 +24,4 @@ This team package is installed for `{{projectName}}` using the `{{blueprintName}
 - prefer small shippable changes over broad rewrites
 - if repo context is unclear, the shepherd clarifies first
 - current workflow emphasis: `{{workflowEmphasis}}`
-- default orchestrator entry: `{{orchestratorPromptPath}}`
+- the orchestrator owns the final consolidation step

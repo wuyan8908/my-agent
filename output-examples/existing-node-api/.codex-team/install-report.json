@@ -14,13 +14,14 @@
   "recommendedInstallMode": "smart",
   "packageManager": "npm",
   "createdFiles": [
+    ".codex-team/fast-mode-prompt.md",
+    ".codex-team/orchestrator-prompt.md",
+    ".codex-team/quick-reference.md",
+    ".codex-team/start.md",
     "agents/backend-architect.md",
     "docs/ai-team/handoff-rules.md",
     "prompts/ai-team/support-issue-analysis.md",
-    "workflows/ai-team/bugfix-flow.md",
-    ".codex-team/start.md",
-    ".codex-team/orchestrator-prompt.md",
-    ".codex-team/quick-reference.md"
+    "workflows/ai-team/bugfix-flow.md"
   ],
   "updatedFiles": [],
   "skippedFiles": [],
@@ -29,9 +30,19 @@
   "deletedFiles": [],
   "toolOwnedFiles": [
     {
-      "path": "agents/backend-architect.md",
-      "sourceTemplate": "templates/agents/backend-architect.md",
+      "path": ".codex-team/fast-mode-prompt.md",
+      "sourceTemplate": "templates/meta/fast-mode-prompt.md",
       "checksum": "example"
+    },
+    {
+      "path": ".codex-team/install-report.json",
+      "sourceTemplate": null,
+      "checksum": null
+    },
+    {
+      "path": ".codex-team/manifest.json",
+      "sourceTemplate": null,
+      "checksum": null
     },
     {
       "path": ".codex-team/orchestrator-prompt.md",
@@ -49,16 +60,14 @@
       "checksum": "example"
     },
     {
-      "path": ".codex-team/manifest.json",
-      "sourceTemplate": null,
-      "checksum": null
-    },
-    {
-      "path": ".codex-team/install-report.json",
-      "sourceTemplate": null,
-      "checksum": null
+      "path": "agents/backend-architect.md",
+      "sourceTemplate": "templates/agents/backend-architect.md",
+      "checksum": "example"
     }
   ],
   "generatedAt": "2026-03-18T00:00:00.000Z",
-  "manifestPath": ".codex-team/manifest.json"
+  "manifestPath": ".codex-team/manifest.json",
+  "projectType": "internal-tools",
+  "stack": "node-api",
+  "blueprint": "internal-tools"
 }

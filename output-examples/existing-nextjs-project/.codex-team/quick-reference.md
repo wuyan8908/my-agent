@@ -2,6 +2,17 @@
 
 # Quick Reference
 
-- feature flow: `prompts/ai-team/new-feature-request.md` -> `workflows/ai-team/feature-delivery.md`
-- bugfix flow: `prompts/ai-team/bugfix-request.md` -> `workflows/ai-team/bugfix-flow.md`
-- review: `agents/code-reviewer.md` -> `workflows/ai-team/release-readiness.md`
+## Mode Split
+
+- `orchestrator mode`: multi-step work, repo-wide coordination, subagent use
+- `fast mode`: one-file or one-issue tasks, minimal overhead, one-pass execution
+
+## Open This
+
+- orchestrator: `.codex-team/orchestrator-prompt.md`
+- fast mode: `.codex-team/fast-mode-prompt.md`
+- day 1 start: `.codex-team/start.md`
+
+## Rule Of Thumb
+
+If the task needs a handoff, use orchestrator mode. If it does not, use fast mode.

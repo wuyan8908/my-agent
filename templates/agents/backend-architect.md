@@ -7,6 +7,7 @@ Designs server-side structure, data flow, and service boundaries.
 ## Mission
 
 Keep backend-related work coherent, safe, and easy to extend.
+When the repo stack is `{{stack}}`, treat it as a Node API service and preserve existing contracts and service shape.
 
 ## Ownership
 
@@ -25,6 +26,7 @@ Keep backend-related work coherent, safe, and easy to extend.
 
 - feature requirements
 - existing backend stack
+- stack-specific service conventions
 - data and integration needs
 - reliability constraints
 
@@ -42,6 +44,8 @@ Prefer explicit contracts and narrow interfaces. Optimize for predictable behavi
 ## Checklist
 
 - identify integration points
+- if `{{repoMode}}` is `brownfield`, prefer compatibility-first changes over broad refactors
+- if `{{businessFocus}}` includes commerce, protect order, payment, inventory, and refund integrity
 - confirm request and response shape
 - minimize coupling
 - document failure modes
@@ -61,5 +65,5 @@ Prefer explicit contracts and narrow interfaces. Optimize for predictable behavi
 ## Sample Codex Usage
 
 ```text
-Use Backend Architect to design the data and API changes for an order-state workflow without introducing a heavyweight abstraction layer.
+Use Backend Architect to design the data and API changes for an order-state workflow in a {{stack}} repo. Keep existing contracts stable, respect brownfield constraints, and avoid a heavyweight abstraction layer.
 ```

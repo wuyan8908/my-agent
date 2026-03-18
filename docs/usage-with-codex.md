@@ -7,9 +7,9 @@ Codex is the main working surface before and after installation. After install, 
 ## Default Start Sequence
 
 1. Open `.codex-team/start.md`.
-2. Paste `.codex-team/orchestrator-prompt.md` into Codex.
+2. Use `.codex-team/fast-mode-prompt.md` for a small task, or `.codex-team/orchestrator-prompt.md` for multi-step work.
 3. Point Codex at the right installed prompt or workflow file.
-4. Let one orchestrator coordinate the work end to end.
+4. Let one orchestrator coordinate the work end to end when the task spans roles or files.
 
 ## New Repository Flow
 

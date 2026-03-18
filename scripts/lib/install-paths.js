@@ -12,6 +12,7 @@ const MANIFEST_PATH = path.join(METADATA_DIR, "manifest.json");
 const INSTALL_REPORT_PATH = path.join(METADATA_DIR, "install-report.json");
 const START_PATH = path.join(METADATA_DIR, "start.md");
 const ORCHESTRATOR_PROMPT_PATH = path.join(METADATA_DIR, "orchestrator-prompt.md");
+const FAST_MODE_PROMPT_PATH = path.join(METADATA_DIR, "fast-mode-prompt.md");
 const QUICK_REFERENCE_PATH = path.join(METADATA_DIR, "quick-reference.md");
 
 function toPortablePath(filePath) {
@@ -37,6 +38,7 @@ function isManagedPath(relativePath) {
 }
 
 module.exports = {
+  FAST_MODE_PROMPT_PATH,
   GENERATED_ROOTS,
   INSTALL_REPORT_PATH,
   MANIFEST_PATH,

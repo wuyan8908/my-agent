@@ -3,9 +3,10 @@
 ## Trigger
 
 Use when a feature request needs design, implementation, and review.
+Start from `{{orchestratorPromptPath}}` and the installed feature request prompt.
 
 Current blueprint emphasis: `{{workflowEmphasis}}`.
-Start from `{{orchestratorPromptPath}}` and the installed feature request prompt.
+Use subagents only for bounded slices that can be merged back into one consolidated result.
 
 ## Primary Agents
 
@@ -16,12 +17,12 @@ Start from `{{orchestratorPromptPath}}` and the installed feature request prompt
 
 ## Steps
 
-1. Clarify the outcome and acceptance criteria.
-2. Identify the owning agent and constraints.
-3. Decide whether any bounded work can be parallelized with subagents.
-4. Build the smallest usable version.
-5. Review for correctness and consistency.
-6. Consolidate handoffs into one final result.
+1. Read the request and extract the outcome, constraints, and acceptance criteria.
+2. Confirm the primary owner and any secondary specialists.
+3. Split only if a slice is independent, bounded, and easy to reconcile.
+4. Execute the plan in the owning agent's layer.
+5. Review the result against the docs, prompts, and handoff rules.
+6. Return one final consolidated answer with files changed, validation, and remaining risk.
 
 ## Exit Criteria
 
@@ -29,4 +30,4 @@ Start from `{{orchestratorPromptPath}}` and the installed feature request prompt
 - acceptance criteria are met
 - risks are documented
 - handoff is clear
-- the final answer reflects one orchestrated result, not disconnected specialist notes
+- the final answer is one orchestrated result, not disconnected specialist notes

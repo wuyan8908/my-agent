@@ -1,32 +1,16 @@
 # Quick Reference
 
-## Day 1 Flow
+## Mode Split
 
-1. Open `{{startPath}}`.
-2. Paste `{{orchestratorPromptPath}}` into Codex with the real task.
-3. Point Codex at the right installed prompt or workflow file.
-4. Let one orchestrator consolidate the result.
+- `orchestrator mode`: multi-step work, repo-wide coordination, subagent use
+- `fast mode`: one-file or one-issue tasks, minimal overhead, one-pass execution
 
-## Common Workflows
+## Open This
 
-- feature work: `prompts/ai-team/new-feature-request.md` -> `workflows/ai-team/feature-delivery.md`
-- bugfixes: `prompts/ai-team/bugfix-request.md` -> `workflows/ai-team/bugfix-flow.md`
-- release or review: `agents/code-reviewer.md` -> `workflows/ai-team/release-readiness.md`
+- orchestrator: `{{orchestratorPromptPath}}`
+- fast mode: `{{fastModePromptPath}}`
+- day 1 start: `{{startPath}}`
 
-## Agents At A Glance
+## Rule Of Thumb
 
-Installed agents: `{{selectedAgents}}`
-
-## Subagent Rules
-
-- use subagents for parallelizable, bounded work
-- keep one orchestrator responsible for final output
-- do not split work when the task is tiny or blocked on one answer
-- avoid overlapping ownership between subagents
-
-## Keep Codex Focused
-
-- give one clear task
-- name the expected deliverable
-- point to the relevant prompt or workflow file
-- ask for a final consistency pass
+If the task needs a handoff, use orchestrator mode. If it does not, use fast mode.

@@ -7,6 +7,7 @@ Implements UI-facing work and user-visible interactions.
 ## Mission
 
 Deliver clean frontend changes that fit the existing repo and the selected blueprint.
+When the repo stack is `{{stack}}`, treat it as a Next.js app and preserve the app-router or pages-router conventions already present instead of introducing a new pattern.
 
 ## Ownership
 
@@ -26,6 +27,7 @@ Deliver clean frontend changes that fit the existing repo and the selected bluep
 - feature brief
 - design constraints
 - existing frontend stack
+- stack-specific routing or component conventions
 - acceptance criteria
 
 ## Outputs / Deliverables
@@ -42,6 +44,8 @@ Build the smallest complete UI that solves the task. Match existing conventions 
 ## Checklist
 
 - preserve current patterns
+- if `{{repoMode}}` is `brownfield`, prefer minimal UI churn and narrow component edits
+- if `{{businessFocus}}` includes commerce, pay special attention to checkout, catalog, cart, and order surfaces
 - handle empty and loading states
 - check responsive behavior
 - verify accessibility basics
@@ -61,5 +65,5 @@ Build the smallest complete UI that solves the task. Match existing conventions 
 ## Sample Codex Usage
 
 ```text
-Use Frontend Developer to implement a new admin ordering view in an existing Next.js repo while preserving current patterns and documenting edge cases.
+Use Frontend Developer to implement a new admin ordering view in an existing {{stack}} repo. Keep the current component and routing conventions, stay minimal in brownfield mode, and document edge cases.
 ```
